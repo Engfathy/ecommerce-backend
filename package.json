@@ -1,0 +1,11 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "first project",
+  "main": "server.js",
+  "scripts": {
+    "test": "node dist/server.js"
+  },
+  "author": "fathy",
+  "license": "ISC"
+}
