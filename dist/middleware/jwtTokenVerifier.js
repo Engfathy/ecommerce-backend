@@ -27,7 +27,7 @@ const jwtTokenVerifier = (req, res, next) => {
                 msg: "Token verification failed. Access denied.",
             });
         }
-        req.headers["user"] = decode["payLoad"]["user"].name;
+        req.headers["email"] = decode["payLoad"]["user"].email;
         req.headers["id"] = decode["payLoad"]["user"].id;
         // console.log(req.headers)
         next();

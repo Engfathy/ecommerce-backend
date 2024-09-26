@@ -23,6 +23,9 @@ interface User extends Document {
     address:Address[];
     default_avatar: string;
     user_avatar: string;
+    verificationCode: string;
+    verificationCode_expiration: string;
+    verified?: boolean;
     reset_token: string;
     reset_token_expiration: string;
     createdAt?: Date;
@@ -50,7 +53,10 @@ const userSchema: Schema = new mongoose.Schema<User>(
         role: { required:true,type: String, enum: ['customer', 'admin'], default: 'customer' },
         address:[AddressSchema],
         default_avatar: { type: String, required: true },
-        user_avatar: { type: String, required: true },
+        user_avatar: { type: String ,default:""},
+        verificationCode: { type: String, default: "" },
+        verificationCode_expiration: { type: String, default: "" },
+        verified: { type: Boolean, default: false },
         reset_token: { type: String, default: "" },
         reset_token_expiration: { type: String, default: "" },
         createdAt: { type: Date, default: Date.now },

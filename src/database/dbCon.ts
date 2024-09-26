@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 import dotEnv from "dotenv";
 
-dotEnv.config({ path: "./../env.env" });
+dotEnv.config();
 
 let uri:string;
 // Function to connect with retry mechanism
 
 const connectWithRetry = (retries = 5, delay = 5000) => {
     if (process.env.MONGODB_URI) {
-        let uri = process.env.MONGODB_URI;
+        uri = process.env.MONGODB_URI;
         console.log(1);
       } else {
         uri="mongodb://localhost:27017/e-commerce"

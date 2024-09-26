@@ -10,8 +10,8 @@ import helmet from "helmet";
 import Db from "./database/dbCon";
 import { defaultLimiter } from "./middleware/reqLimiter";
 import userRouter from "./router/userRouter";
-
-
+import cluster  from 'cluster';
+import os from 'os';
 
 
 const app: express.Application = express();
@@ -42,8 +42,19 @@ const hostName: string |any= process.env.HOST_NAME ;
 const port: number = Number(process.env.PORT);
 
 
-if (hostName && port) {
-    server.listen(port, hostName, () => {
-        console.log(`server is running at http://${hostName}:${port}`);
-    });
-}
+// if (cluster.isPrimary) {
+//     const numCPUs = os.cpus().length;
+//     for (let i = 0; i < numCPUs; i++) {
+//       cluster.fork();
+//     }
+//     cluster.on('exit', (worker, code, signal) => {
+//       console.log(`Worker ${worker.process.pid} died. Restarting...`);
+//       cluster.fork();
+//     });} else{
+
+        if (hostName && port) {
+            server.listen(port, hostName, () => {
+                console.log(`server is running at http://${hostName}:${port}`);
+            });
+        }
+    // }

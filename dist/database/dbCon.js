@@ -5,12 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config({ path: "./../env.env" });
+dotenv_1.default.config();
 let uri;
 // Function to connect with retry mechanism
 const connectWithRetry = (retries = 5, delay = 5000) => {
     if (process.env.MONGODB_URI) {
-        let uri = process.env.MONGODB_URI;
+        uri = process.env.MONGODB_URI;
         console.log(1);
     }
     else {

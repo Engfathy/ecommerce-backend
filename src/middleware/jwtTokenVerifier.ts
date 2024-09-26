@@ -25,7 +25,7 @@ const jwtTokenVerifier = (req: express.Request, res: express.Response, next: exp
             });
         }
 
-        req.headers["user"] = decode["payLoad"]["user"].name;
+        req.headers["email"] = decode["payLoad"]["user"].email;
         req.headers["id"] = decode["payLoad"]["user"].id;
         // console.log(req.headers)
         next();

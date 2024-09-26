@@ -34,9 +34,19 @@ app.use("/api/v1/user", reqLimiter_1.defaultLimiter, userRouter_1.default);
 dotenv_1.default.config({ path: "./.env" });
 const hostName = process.env.HOST_NAME;
 const port = Number(process.env.PORT);
+// if (cluster.isPrimary) {
+//     const numCPUs = os.cpus().length;
+//     for (let i = 0; i < numCPUs; i++) {
+//       cluster.fork();
+//     }
+//     cluster.on('exit', (worker, code, signal) => {
+//       console.log(`Worker ${worker.process.pid} died. Restarting...`);
+//       cluster.fork();
+//     });} else{
 if (hostName && port) {
     server.listen(port, hostName, () => {
         console.log(`server is running at http://${hostName}:${port}`);
     });
 }
+// }
 //# sourceMappingURL=server.js.map
