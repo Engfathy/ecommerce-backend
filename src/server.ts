@@ -12,6 +12,9 @@ import { defaultLimiter } from "./middleware/reqLimiter";
 import userRouter from "./router/userRouter";
 import cluster  from 'cluster';
 import os from 'os';
+import adminRouter from "./router/adminProductRouter";
+import adminProductRouter from "./router/adminProductRouter";
+import paymentRouter from "./router/paymentRouter";
 
 
 const app: express.Application = express();
@@ -36,6 +39,9 @@ app.use(hpp());
 //connect database
 Db.ConnectDb();
 app.use("/api/v1/user", defaultLimiter, userRouter);
+app.use("/api/v1/payments", defaultLimiter, paymentRouter);
+app.use("/api/v1/admin/product", adminProductRouter);
+app.use("/api/v1/admin/product", adminProductRouter);
 dotEnv.config({ path: "./.env" });
 const hostName: string |any= process.env.HOST_NAME ;
 

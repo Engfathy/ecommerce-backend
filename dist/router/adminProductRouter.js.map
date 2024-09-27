@@ -1,0 +1,1 @@
+{"version":3,"file":"adminProductRouter.js","sourceRoot":"","sources":["../../src/router/adminProductRouter.ts"],"names":[],"mappings":";;;;;AAAA,sDAA8B;AAc9B,oDAA4B;AAG5B,MAAM,MAAM,GAAG,IAAA,gBAAM,GAAE,CAAC;AACxB,MAAM,kBAAkB,GAAmB,iBAAO,CAAC,MAAM,EAAE,CAAC;AAC5D,kBAAkB,CAAC,IAAI,CAAC,iBAAiB,EAAE,MAAM,CAAC,KAAK,CAAC,QAAQ,EAAE,EAAE,CAAC,CAAC,CAAA;AAEtE,kBAAe,kBAAkB,CAAC"}

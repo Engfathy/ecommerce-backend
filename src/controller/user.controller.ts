@@ -335,6 +335,22 @@ export const sendVerificationEmail = async (
                     },
                 },
             );
+
+             // Send the verification email
+    //   await sendEmail({
+    //     to: email,
+    //     subject: 'Email Verification',
+    //     message: `
+    //       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    //         <h2 style="color: #2c3e50;">Email Verification</h2>
+    //         <p>Dear User,</p>
+    //         <p>Your verification code is: <strong>${verificationCode}</strong></p>
+    //         <p>Please enter this code in the verification page to verify your email address.</p>
+    //         <p>If you did not request this, please ignore this email.</p>
+    //         <p>Thank you!</p>
+    //         <p>Best regards,<br>Your Company Name</p>
+    //       </div>`,
+    //   });
             return res.status(200).json({
                 success: true,
                 msg: "Please check your inbox for verify your email.",
@@ -431,7 +447,26 @@ export const forgetPassword = async (
                     },
                 },
             );
-
+ // Send the password reset email
+//  await sendEmail({
+//     to: email,
+//     subject: 'Password Reset Request',
+//     message: `
+//       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+//         <h2 style="color: #2c3e50;">Password Reset Request</h2>
+//         <p>Dear User,</p>
+//         <p>We received a request to reset your password. Click the link below to create a new password:</p>
+//         <p>
+//           <a href="https://yourwebsite.com/reset-password?token=${resetToken}" 
+//              style="background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+//              Reset Password
+//           </a>
+//         </p>
+//         <p>If you did not request this, please ignore this email.</p>
+//         <p>Thank you!</p>
+//         <p>Best regards,<br>Your Company Name</p>
+//       </div>`,
+//   });
             return res.status(200).json({
                 success: true,
                 msg: "Please check your inbox for resetting your password.",
